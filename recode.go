@@ -11,7 +11,8 @@ import (
 
 type retort struct {
 	ID          string `json:"id"`
-	Base64      string `json:"base64"`
+	Base64f     string `json:"base64f"`
+	Base64b     string `json:"base64b"`
 	Base32      string `json:"base32"`
 	Hexidecimal string `json:"hex"`
 }
@@ -26,11 +27,12 @@ func (a *App) recode(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("error: %v\n", err)
 	}
 
-	b64, err := base64.StdEncoding.DecodeString(i)
+	b64f := base64.StdEncoding.EncodeToString([]byte(i))
+	b64b, err := base64.StdEncoding.DecodeString(i)
 	b32, err := base32.StdEncoding.DecodeString(i)
 	hx, err := hex.DecodeString(i)
 
-	respondWithJSON(w, http.StatusOK, retort{uuid, string(b64), string(b32), string(hx)})
+	respondWithJSON(w, http.StatusOK, retort{uuid, string(b64f), string(b64b), string(b32), string(hx)})
 }
 
 /////

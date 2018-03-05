@@ -2,6 +2,8 @@
 
 Tool for testing as many encoding methods as possible, as well as some combinations.
 
+Right now the en/decoding is safe, meaning if the input string doesn't generate printable characters nothing will be returned for that coder. I plan on adding unsafe output at a later date.
+
 ### Installation
 
 Install through Go:
