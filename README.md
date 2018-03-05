@@ -7,9 +7,10 @@ Tool for testing as many encoding methods as possible, as well as some combinati
 Install through Go:
 ```
 $ go get github.com/dacoursey/recoder
+$ $GOPATH/bin/recoder
 ```
 
-Or, pull the source and install/run manually:
+Or, pull the source and install manually:
 ```
 $ git clone https://github.com/dacoursey/recoder
 $ cd recoder
