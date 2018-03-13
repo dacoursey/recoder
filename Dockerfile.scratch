@@ -1,0 +1,3 @@
+FROM scratch
+ADD app/main /
+CMD ["/main"]
